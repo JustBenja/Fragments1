@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 // Create a new instance of SmsFragment
-             //   smsFragment = new SmsFragment();
+                smsFragment = new SmsFragment();
 // Get the FragmentManager and start a transaction
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 // Replace the content of the fragmentContainerView with SmsFragment

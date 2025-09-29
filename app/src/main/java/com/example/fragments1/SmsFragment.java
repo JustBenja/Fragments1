@@ -10,22 +10,22 @@ import androidx.fragment.app.Fragment;
 /**
  * A simple {@link Fragment} subclass that allows the user to compose and "send" an email.
  * It contains fields for the email address and message body, and a button to trigger the action.
- * Use the {@link EmailFragment#newInstance} factory method to
+ * Use the {@link SmsFragment#newInstance} factory method to
  * create an instance of this fragment if you need to pass arguments upon creation.
  */
 
-public class EmailFragment extends Fragment {
+public class SmsFragment extends Fragment {
     // UI elements
-    private EditText etText, etEmail;
-    private Button btSendEmail;
+    private EditText etText, etSms;
+    private Button btSendMessage;
     /**
      * Required empty public constructor for Fragment instantiation.
      */
-    public EmailFragment() {
+    public SmsFragment() {
 // Required empty public constructor
     }
-    public static EmailFragment newInstance() {
-        EmailFragment fragment = new EmailFragment();
+    public static SmsFragment newInstance() {
+        SmsFragment fragment = new SmsFragment();
         return fragment;
     }
     /**
@@ -57,22 +57,22 @@ public class EmailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_email, container, false);
+        View view = inflater.inflate(R.layout.fragment_sms, container, false);
 // Initialize UI elements by finding them in the inflated view
 
         etText = view.findViewById(R.id.etText); // EditText for the email message
-        etEmail = view.findViewById(R.id.etEmail); // EditText for the recipient's email address
-        btSendEmail = view.findViewById(R.id.btSendEmail); // Button to trigger sending the email
+        etSms = view.findViewById(R.id.etSms); // EditText for the recipient's email address
+        btSendMessage = view.findViewById(R.id.btSendMessage); // Button to trigger sending the email
 // Set a click listener for the send email button
-        btSendEmail.setOnClickListener(new View.OnClickListener() {
+        btSendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 // Get the text from the EditText fields
                 String msg = etText.getText().toString();
-                String email = etEmail.getText().toString();
+                String sms = etSms.getText().toString();
 // Display a Toast message with the email and message content.
 // In a real application, you would typically use an Intent to send an actual email.
-                Toast.makeText(getActivity(), email + "-" +msg, Toast.LENGTH_LONG ).show();
+                Toast.makeText(getActivity(), sms + "-" +msg, Toast.LENGTH_LONG ).show();
             }
         });
 // Return the inflated view
